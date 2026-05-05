@@ -4,6 +4,8 @@ import 'package:provider/provider.dart';
 import 'providers/cpf_provider.dart';
 import 'providers/fipe_provider.dart';
 import 'providers/moeda_provider.dart';
+import 'providers/cep_provider.dart';
+import 'providers/senha_provider.dart';
 import 'screens/home_screen.dart';
 
 void main() {
@@ -20,6 +22,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => CpfProvider()),
         ChangeNotifierProvider(create: (_) => FipeProvider()),
         ChangeNotifierProvider(create: (_) => MoedaProvider()),
+        ChangeNotifierProvider(create: (_) => CepProvider()),
+        ChangeNotifierProvider(create: (_) => SenhaProvider()),
       ],
       child: MaterialApp(
         title: 'Invertexto App',

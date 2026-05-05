@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'cpf_screen.dart';
 import 'moeda_screen.dart';
 import 'fipe_screen.dart';
+import 'cep_screen.dart';
+import 'senha_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -50,7 +52,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 6),
                     Text(
-                      'Acesse funcionalidades poderosas\ndiretamente no seu app Flutter.',
+                      '',
                       style: TextStyle(
                         color: Colors.white.withOpacity(0.9),
                         fontSize: 14,
@@ -110,6 +112,32 @@ class HomeScreen extends StatelessWidget {
                   MaterialPageRoute(builder: (_) => const FipeScreen()),
                 ),
               ),
+              const SizedBox(height: 14),
+
+              _FuncionalidadeCard(
+                titulo: 'Consulta de CEP',
+                descricao:
+                    'Digite um CEP e obtenha logradouro, bairro, cidade e estado completos.',
+                icone: Icons.location_on,
+                cor: const Color(0xFF00695C),
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const CepScreen()),
+                ),
+              ),
+              const SizedBox(height: 14),
+
+              _FuncionalidadeCard(
+                titulo: 'Gerador de Senhas',
+                descricao:
+                    'Gere senhas fortes e seguras com tamanho e tipos de caracteres personalizados.',
+                icone: Icons.lock,
+                cor: const Color(0xFFBF360C),
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const SenhaScreen()),
+                ),
+              ),
 
               const SizedBox(height: 28),
 
@@ -126,6 +154,15 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     Icon(Icons.info_outline, color: Colors.orange.shade700),
                     const SizedBox(width: 12),
+                    Expanded(
+                      child: Text(
+                        '',
+                        style: TextStyle(
+                          color: Colors.orange.shade800,
+                          fontSize: 13,
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
